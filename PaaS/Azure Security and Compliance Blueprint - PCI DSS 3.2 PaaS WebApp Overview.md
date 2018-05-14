@@ -1,6 +1,6 @@
 # Azure Security and Compliance Blueprint - Web Application for PCI DSS 3.2
 
-### Overview
+## Overview
 
 This Azure Security and Compliance Blueprint provides guidance for the deployment of a Payment Card Industry Data Security Standards (PCI DSS 3.2) compliant platform as a service (PaaS) environment suitable for the collection, storage, and retrieval of payment card data. It showcases a common reference architecture and demonstrates the proper handling of credit card data (including card number, expiration, and verification data) in a secure, compliant, multi-tier environment. This blueprint illustrates an end-to-end solution to meet the needs of organizations seeking a cloud-based approach to reducing the burden and cost of deployment. For more information about PCI DSS 3.2 requirements and this solution, see [PCI DSS Requirements - High-Level Overview](https://docs.microsoft.com/en-us/azure/security/blueprints/pci-dss-requirements-overview).
 
@@ -10,7 +10,7 @@ This reference architecture, associated implementation guide, and threat model a
 - Achieving PCI DSS-compliance requires that an accredited Qualified Security Assessor (QSA) certify a production customer solution.
 - Customers are responsible for conducting appropriate security and compliance assessments of any solution built using this architecture, as requirements may vary based on the specifics of each customer&#39;s implementation.
 
-### Architecture diagram and components
+## Architecture diagram and components
 
 This solution provides a reference architecture for a PaaS web application with an Azure SQL Database backend. The web application is hosted in an isolated Azure App Service Environment, which is a private, dedicated environment in an Azure datacenter. The environment load balances traffic for the web application across VMs managed by Azure. This architecture also includes network security groups, an Application Gateway, Azure DNS, and Load Balancer. Furthermore, Application Insights provides real time application performance management and analytics through Operations Management Suite (OMS). **Azure recommends configuring a VPN or ExpressRoute connection for management and data import into the reference architecture subnet.**
 
@@ -39,7 +39,7 @@ This solution uses the following Azure services. Details of the deployment archi
 - Azure Web App
 - Azure Resource Manager
 
-### Deployment architecture
+## Deployment architecture
 
 The following section details the deployment and implementation elements.
 
@@ -62,7 +62,7 @@ Use of ASEs for this architecture are allowed for the following controls/configu
 
 **Azure Web App** : [Azure Web Apps](https://docs.microsoft.com/en-us/azure/app-service/) enables customers to build and host web applications in the programming language of their choice without managing infrastructure. It offers auto-scaling and high availability, supports both Windows and Linux, and enables automated deployments from GitHub, Visual Studio Team Services, or any Git repo.
 
-#### Virtual Network
+### Virtual Network
 
 The architecture defines a private VNet with an address space of 10.200.0.0/16.
 
@@ -83,11 +83,11 @@ Each of the NSGs have specific ports and protocols open so that the solution can
 
 **Azure Load Balancer** : [Azure Load Balancer](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview) allows customers to scale their applications and create high availability for services. Load Balancer supports inbound as well as outbound scenarios, and provides low latency, high throughput, and scales up to millions of flows for all TCP and UDP applications.
 
-#### Data in transit
+### Data in transit
 
 Azure encrypts all communications to and from Azure datacenters by default. All transactions to Azure Storage through the Azure portal occur via HTTPS.
 
-#### Data at rest
+### Data at rest
 
 The architecture protects data at rest through encryption, database auditing, and other measures.
 
@@ -107,7 +107,7 @@ The architecture protects data at rest through encryption, database auditing, an
 - [Row-Level Security](https://docs.microsoft.com/sql/relational-databases/security/row-level-security) enables users to define policies to restrict access to data to discontinue processing.
 - [SQL Database Dynamic Data Masking (DDM)](https://docs.microsoft.com/azure/sql-database/sql-database-dynamic-data-masking-get-started) limits sensitive cardholder data exposure by masking the data to non-privileged users or applications. DDM can automatically discover potentially sensitive data and suggest the appropriate masks to be applied. This helps to reduce access to cardholder data such that it does not exit the database via unauthorized access. **Note: Customers will need to adjust DDM settings to adhere to their database schema.**
 
-#### Identity management
+### Identity management
 
 The following technologies provide capabilities to manage access to personal data in the Azure environment:
 
@@ -117,7 +117,7 @@ The following technologies provide capabilities to manage access to personal dat
 - [AAD Privileged Identity Management (PIM)](https://docs.microsoft.com/azure/active-directory/active-directory-privileged-identity-management-getting-started) enables customers to minimize the number of users who have access to certain information such as personal data. Administrators can use AAD Privileged Identity Management to discover, restrict, and monitor privileged identities and their access to resources. This functionality can also be used to enforce on-demand, just-in-time administrative access when needed.
 - [AAD Identity Protection](https://docs.microsoft.com/azure/active-directory/active-directory-identityprotection) detects potential vulnerabilities affecting an organization&#39;s identities, configures automated responses to detected suspicious actions related to an organization&#39;s identities, and investigates suspicious incidents to take appropriate action to resolve them.
 
-#### Security
+### Security
 
 **Secrets Management** The solution uses [Azure Key Vault](https://azure.microsoft.com/services/key-vault/) for the management of keys and secrets. Azure Key Vault helps safeguard cryptographic keys and secrets used by cloud applications and services. The following Azure Key Vault capabilities help customers protect personal data and access to such data:
 
@@ -142,7 +142,7 @@ The following technologies provide capabilities to manage access to personal dat
 - [Custom health probes](https://docs.microsoft.com/en-us/azure/application-gateway/application-gateway-create-gateway-portal)
 - [Azure Security Center](https://azure.microsoft.com/services/security-center) and [Azure Advisor](https://docs.microsoft.com/en-us/azure/advisor/advisor-security-recommendations) provide additional protection and notifications. Azure Security Center also provides a reputation system.
 
-#### Logging and auditing
+### Logging and auditing
 
 OMS provides extensive logging of system and user activity, as well as system health. The OMS [Log Analytics](https://azure.microsoft.com/services/log-analytics/) solution collects and analyzes data generated by resources in Azure and on-premises environments.
 
@@ -166,21 +166,21 @@ Additionally, the following OMS solutions are included as a part of this archite
 
 **Application Insights** [Application Insights](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-overview) is an extensible Application Performance Management (APM) service for web developers on multiple platforms. Application Insights detects performance anomalies and customers can use it to monitor the live web application. It includes powerful analytics tools to help customers diagnose issues and to understand what users actually do with their app. It&#39;s designed to help customers continuously improve performance and usability.
 
-### Threat model
+## Threat model
 
 The data flow diagram for this reference architecture is available for [download]() or can be found below. This model can help customers understand the points of potential risk in the system infrastructure when making modifications.
 
 ![threat model](https://raw.githubusercontent.com/jayangra/AzurePCI3.2/master/PaaS/Azure%20Security%20and%20Compliance%20Blueprint%20-%20PCI%20DSS%203.2%20PaaS%20WebApp%20Threat%20Model.png)
 
-### Compliance documentation
+## Compliance documentation
 
 The [Azure Security and Compliance Blueprint – PCI DSS 3.2 Customer Responsibility Matrix]() lists controller and processor responsibilities for all PCI DSS 3.2 requirements. Please note that for Azure services, a customer is usually the controller and Microsoft acts as the processor.
 
 The [Azure Security and Compliance Blueprint – PCI DSS 3.2 PaaS Web Application Implementation Matrix]() provides information on which PCI DSS 3.2 requirements are addressed by the PaaS web application architecture, including detailed descriptions of how the implementation meets the requirements of each covered article.
 
-### Guidance and recommendations
+## Guidance and recommendations
 
-#### VPN and ExpressRoute
+### VPN and ExpressRoute
 
 A secure VPN tunnel or [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) needs to be configured to securely establish a connection to the resources deployed as a part of this PaaS web application reference architecture. By appropriately setting up a VPN or ExpressRoute, customers can add a layer of protection for data in transit.
 
@@ -190,7 +190,7 @@ Because traffic within the VPN tunnel does traverse the Internet with a site-to-
 
 Best practices for implementing a secure hybrid network that extends an on-premises network to Azure are [available](https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/dmz/secure-vnet-hybrid).
 
-### Disclaimer
+## Disclaimer
 
 - This document is for informational purposes only. MICROSOFT MAKES NO WARRANTIES, EXPRESS, IMPLIED, OR STATUTORY, AS TO THE INFORMATION IN THIS DOCUMENT. This document is provided &quot;as-is.&quot; Information and views expressed in this document, including URL and other Internet website references, may change without notice. Customers reading this document bear the risk of using it.
 - This document does not provide customers with any legal rights to any intellectual property in any Microsoft product or solutions.
