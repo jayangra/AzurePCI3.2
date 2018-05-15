@@ -1,7 +1,7 @@
 # Azure Security and Compliance Blueprint: Analytics for PCI DSS 3.2
 
 ## Overview
-This Azure Security and Compliance Blueprint provides guidance for the deployment of a Payment Card Industry Data Security Standards (PCI DSS 3.2) compliant data analytics architecture in Azure that assists with the requirements of PCI DSS 3.2. It showcases a common reference architecture and demonstrates the proper handling of credit card data (including card number, expiration, and verification data) in a secure, compliant, multi-tier environment. This blueprint demonstrates ways in which customers can meet specific security and compliance requirements and serves as a foundation for customers to build and configure their own data analytics solutions in Azure. For more information about PCI DSS 3.2 requirements and this solution, see [PCI DSS Requirements - High-Level Overview](https://docs.microsoft.com/en-us/azure/security/blueprints/pci-dss-requirements-overview).
+This Azure Security and Compliance Blueprint provides guidance for the deployment of a data analytics architecture in Azure that assists with the requirements of Payment Card Industry Data Security Standards (PCI DSS 3.2). It showcases a common reference architecture and demonstrates the proper handling of credit card data (including card number, expiration, and verification data) in a secure, compliant, multi-tier environment. This blueprint demonstrates ways in which customers can meet specific security and compliance requirements and serves as a foundation for customers to build and configure their own data analytics solutions in Azure. For more information about PCI DSS 3.2 requirements and this solution, see [PCI DSS Requirements - High-Level Overview](https://docs.microsoft.com/en-us/azure/security/blueprints/pci-dss-requirements-overview).
 
 This reference architecture, associated implementation guide, and threat model are intended to serve as a foundation for customers to adapt to PCI DSS 3.2 specific requirements and should not be used as-is in a production environment. Please note the following:
 
@@ -150,7 +150,7 @@ The data flow diagram for this reference architecture is available for [download
 ## Compliance documentation
 The [Azure Security and Compliance Blueprint - PCI DSS 3.2 Customer Responsibility Matrix](https://aka.ms/PCICRM) lists responsibilities for all PCI DSS 3.2 requirements. Please note that for Azure services, a customer is usually the controller and Microsoft acts as the processor.
 
-The [Azure Security and Compliance Blueprint - PCI DSS 3.2 Data Analytics Implementation Matrix](https://aka.ms/PCIAnalyticsCIM) provides information on which PCI DSS 3.2 requirements are addressed by the data analytics architecture, including detailed descriptions of how the implementation meets the requirements of each covered article.
+The [Azure Security and Compliance Blueprint - PCI DSS 3.2 Data Analytics Implementation Matrix](https://aka.ms/PCIAnalyticsCIM) provides information on which PCI DSS 3.2 requirements are addressed by the data analytics architecture, including detailed descriptions of how the implementation meets the requirements of each covered control.
 
 
 ## Guidance and recommendations
