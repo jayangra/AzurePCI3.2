@@ -1,4 +1,4 @@
-# Azure Security and Compliance Blueprint - Web Application for PCI DSS 3.2
+# Azure Security and Compliance Blueprint - IaaS Web Application for PCI DSS 3.2
 
 ## Overview
 This Azure Security and Compliance Blueprint provides guidance for the deployment of a Payment Card Industry Data Security Standards (PCI DSS 3.2) compliant infrastructure as a service (IaaS) environment suitable for the collection, storage, and retrieval of cardholder data. It showcases a common reference architecture and demonstrates the proper handling of credit card data (including card number, expiration, and verification data) in a secure, compliant, multi-tier environment. This blueprint illustrates an end-to-end solution to meet the needs of organizations seeking a cloud-based approach to reducing the burden and cost of deployment. For more information about PCI DSS 3.2 requirements and this solution, see [PCI DSS Requirements - High-Level Overview](https://docs.microsoft.com/en-us/azure/security/blueprints/pci-dss-requirements-overview).
