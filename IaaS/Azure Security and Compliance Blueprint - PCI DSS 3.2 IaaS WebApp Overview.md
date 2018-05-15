@@ -160,15 +160,15 @@ Additionally, the following OMS solutions are included as a part of this archite
 
 ## Threat model
 
-The data flow diagram (DFD) for this reference architecture is available for [download]() or can be found below. This model can help customers understand the points of potential risk in the system infrastructure when making modifications.
+The data flow diagram (DFD) for this reference architecture is available for [download](https://aka.ms/PCIIaaSWebappTM) or can be found below. This model can help customers understand the points of potential risk in the system infrastructure when making modifications.
 
 ![Threat Model](https://raw.githubusercontent.com/jayangra/AzurePCI3.2/master/IaaS/Azure%20Security%20and%20Compliance%20Blueprint%20-%20PCI%20DSS%203.2%20IaaS%20WebApp%20Threat%20Model.png)
 
 ## Compliance documentation
 
-The [Azure Security and Compliance Blueprint - PCI DSS 3.2 Customer Responsibility Matrix]() lists responsibilities for all PCI DSS 3.2 requirements. Please note that for Azure services, a customer is usually the controller and Microsoft acts as the processor.
+The [Azure Security and Compliance Blueprint - PCI DSS 3.2 Customer Responsibility Matrix](https://aka.ms/PCICRM) lists responsibilities for all PCI DSS 3.2 requirements. Please note that for Azure services, a customer is usually the controller and Microsoft acts as the processor.
 
-The [Azure Security and Compliance Blueprint - PCI DSS 3.2 IaaS Web Application Implementation Matrix]() provides information on which PCI DSS 3.2 requirements are addressed by the IaaS Web Application architecture, including detailed descriptions of how the implementation meets the requirements of each covered article.
+The [Azure Security and Compliance Blueprint - PCI DSS 3.2 IaaS Web Application Implementation Matrix](https://aka.ms/PCIIaaSWebappCIM) provides information on which PCI DSS 3.2 requirements are addressed by the IaaS Web Application architecture, including detailed descriptions of how the implementation meets the requirements of each covered article.
 
 ## Guidance and recommendations
 ### VPN and ExpressRoute
