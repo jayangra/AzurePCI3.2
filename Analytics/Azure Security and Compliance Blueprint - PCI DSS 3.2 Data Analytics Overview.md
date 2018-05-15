@@ -148,7 +148,7 @@ The data flow diagram for this reference architecture is available for [download
 ![threat model](https://raw.githubusercontent.com/jayangra/AzurePCI3.2/master/Analytics/Azure%20Security%20and%20Compliance%20Blueprint%20-%20PCI%20DSS%203.2%20Data%20Analytics%20Threat%20Model.png)
 
 ## Compliance documentation
-The [Azure Security and Compliance Blueprint - PCI DSS 3.2 Customer Responsibility Matrix](https://aka.ms/PCICRM) lists responsibilities for all PCI DSS 3.2 requirements. Please note that for Azure services, a customer is usually the controller and Microsoft acts as the processor.
+The [Azure Security and Compliance Blueprint - PCI DSS 3.2 Customer Responsibility Matrix](https://aka.ms/PCICRM) lists responsibilities for all PCI DSS 3.2 requirements.
 
 The [Azure Security and Compliance Blueprint - PCI DSS 3.2 Data Analytics Implementation Matrix](https://aka.ms/PCIAnalyticsCIM) provides information on which PCI DSS 3.2 requirements are addressed by the data analytics architecture, including detailed descriptions of how the implementation meets the requirements of each covered control.
 
