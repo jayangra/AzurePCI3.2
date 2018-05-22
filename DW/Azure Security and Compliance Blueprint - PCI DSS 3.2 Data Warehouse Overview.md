@@ -34,7 +34,7 @@ This solution uses the following Azure services. Details of the deployment archi
 -	Availability Sets
     - Active Directory Domain Controllers
     - SQL Cluster Nodes and Witness
--	Virtual Network
+-	Azure Virtual Network
     - (4) Subnets
     - (4) Network Security Groups
 - Azure Active Directory
@@ -44,12 +44,10 @@ This solution uses the following Azure services. Details of the deployment archi
 - Azure Security Center
 - Azure SQL Load Balancer
 - Azure Storage
-- ExpressRoute
 - Operations Management Suite (OMS)
 - Recovery Services Vault
 - SQL Data Warehouse
 - SQL Server Reporting Services
-- VPN Gateway
 
 ## Deployment architecture
 The following section details the deployment and implementation elements.
