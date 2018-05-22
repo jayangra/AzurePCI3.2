@@ -34,7 +34,7 @@ This solution uses the following Azure services. Details of the deployment archi
 - Azure Key Vault
 - Azure Monitor
 - Azure Security Center
-- Azure SQL Load Balancer
+- Azure Load Balancer
 - Azure Storage
 - Azure Virtual Machines
     - (1) Bastion Host
