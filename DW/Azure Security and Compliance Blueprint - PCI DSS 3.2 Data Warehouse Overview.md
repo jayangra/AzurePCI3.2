@@ -36,16 +36,20 @@ This solution uses the following Azure services. Details of the deployment archi
     - SQL Cluster Nodes and Witness
 -	Virtual Network
     - (4) Subnets
-    -	(4) Network Security Groups
+    - (4) Network Security Groups
+- Azure Active Directory
+- Azure Data Catalog
+- Azure Key Vault
+- Azure Monitor
+- Azure Security Center
+- Azure SQL Load Balancer
+- Azure Storage
+- ExpressRoute
+- Operations Management Suite (OMS)
+- Recovery Services Vault
 - SQL Data Warehouse
 - SQL Server Reporting Services
-- Azure SQL Load Balancer
-- Azure Active Directory
-- Recovery Services Vault
-- Azure Key Vault
-- Operations Management Suite (OMS)
-- Azure Data Catalog
-- Azure Security Center
+- VPN Gateway
 
 ## Deployment architecture
 The following section details the deployment and implementation elements.
@@ -153,7 +157,7 @@ Additionally, the following OMS solutions are included as a part of this archite
 
 The data flow diagram for this reference architecture is available for [download](https://aka.ms/PCIDWTM) or can be found below. This model can help customers understand the points of potential risk in the system infrastructure when making modifications.
 
-![threat model](https://raw.githubusercontent.com/jayangra/AzurePCI3.2/master/DW/Azure%20Security%20and%20Compliance%20Blueprint%20-%20PCI%20DSS%203.2%20Data%20Warehouse%20Threat%20Model.png)
+![threat model](AzurePCI3.2/DW/DataWarehouse-TM.png)
 
 ## Compliance documentation
 The [Azure Security and Compliance Blueprint – PCI DSS 3.2 Customer Responsibility Matrix](https://aka.ms/PCICRM) lists responsibilities for all PCI DSS 3.2 requirements.
