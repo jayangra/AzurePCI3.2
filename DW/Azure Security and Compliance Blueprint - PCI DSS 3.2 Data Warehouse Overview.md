@@ -29,7 +29,7 @@ This solution uses the following Azure services. Details of the deployment archi
 - Availability Sets
     - Active Directory Domain Controllers
     - SQL Cluster Nodes and Witness
-- Azure Active Directory
+- Azure Active Directory (AAD)
 - Azure Data Catalog
 - Azure Key Vault
 - Azure Monitor
@@ -42,7 +42,7 @@ This solution uses the following Azure services. Details of the deployment archi
     - (2) SQL Server Cluster Node
     - (1) SQL Server Witness
 - Azure Virtual Network
-	- (1) /16 Network
+    - (1) /16 Network
     - (4) /24 Networks
     - (4) Network Security Groups
 - Operations Management Suite (OMS)
