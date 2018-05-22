@@ -18,26 +18,29 @@ This solution provides a reference architecture for a PaaS web application with 
 
 This solution uses the following Azure services. Details of the deployment architecture are located in the [deployment architecture](https://github.com/sukykaur/AzureGDPR/blob/master/PaaSWebAppOverview.md#deployment-architecture) section.
 
-- Azure Active Directory (AAD)
-- Azure Key Vault
-- Azure SQL Database
+- App Service Environment v2
 - Application Gateway
   - (1) WAF Application Gateway enabled
     - firewall mode: Prevention
     - rule set: OWASP 3.0
     - listener: port 443
-- Azure virtual network
-- network security groups
-- Azure DNS
-- Azure Storage
-- Operations Management Suite (OMS)
-- Azure Monitor
 - Application Insights
-- Azure Security Center
-- App Service Environment v2
+- Azure Active Directory (AAD)
+- Azure Automation
+- Azure DNS
+- Azure Key Vault
 - Azure Load Balancer
-- Azure Web App
+- Azure Monitor
 - Azure Resource Manager
+- Azure Security Center
+- Azure SQL Database
+- Azure Storage
+- Azure Virtual Network
+	- (1) /16 Network
+	- (3) /24 Networks
+	- (3) Network Security Groups
+- Azure Web App
+- Operations Management Suite (OMS)
 
 ## Deployment architecture
 
@@ -102,7 +105,7 @@ The architecture protects data at rest through encryption, database auditing, an
 - Azure SQL Database is configured to use [Transparent Data Encryption (TDE)](https://docs.microsoft.com/sql/relational-databases/security/encryption/transparent-data-encryption-azure-sql), which performs real-time encryption and decryption of the database, associated backups, and transaction log files to protect information at rest. TDE provides assurance that stored cardholder data has not been subject to unauthorized access.
 - [Firewall rules](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure) prevent all access to database servers until proper permissions are granted. The firewall grants access to databases based on the originating IP address of each request.
 - [SQL Threat Detection](https://docs.microsoft.com/azure/sql-database/sql-database-threat-detection-get-started) enables the detection and response to potential threats as they occur by providing security alerts for suspicious database activities, potential vulnerabilities, SQL injection attacks, and anomalous database access patterns.
-- [Always Encrypted Columns](https://docs.microsoft.com/azure/sql-database/sql-database-always-encrypted-azure-key-vault) ensure that sensitive cardholder data never appears as plaintext inside the database system. After enabling data encryption, only client applications or application servers with access to the keys can access plaintext data.
+- [Encrypted Columns](https://docs.microsoft.com/azure/sql-database/sql-database-always-encrypted-azure-key-vault) ensure that sensitive cardholder data never appears as plaintext inside the database system. After enabling data encryption, only client applications or application servers with access to the keys can access plaintext data.
 - [Extended properties](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-addextendedproperty-transact-sql) can be used to discontinue the processing of data subjects, as it allows users to add custom properties to database objects and tag data as &quot;Discontinued&quot; to support application logic to prevent the processing of associated cardholder data.
 - [Row-Level Security](https://docs.microsoft.com/sql/relational-databases/security/row-level-security) enables users to define policies to restrict access to data to discontinue processing.
 - [SQL Database Dynamic Data Masking (DDM)](https://docs.microsoft.com/azure/sql-database/sql-database-dynamic-data-masking-get-started) limits sensitive cardholder data exposure by masking the data to non-privileged users or applications. DDM can automatically discover potentially sensitive data and suggest the appropriate masks to be applied. This helps to identify and reduce access to cardholder data such that it does not exit the database via unauthorized access. **Note: Customers will need to adjust DDM settings to adhere to their database schema.**
