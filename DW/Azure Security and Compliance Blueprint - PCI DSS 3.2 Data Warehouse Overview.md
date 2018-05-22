@@ -26,17 +26,9 @@ A VM serves as a management bastion host, providing a secure connection for admi
 
 This solution uses the following Azure services. Details of the deployment architecture are in the [Deployment Architecture](#deployment-architecture) section.
 
--	Azure Virtual Machines
-    - (1) Bastion Host
-    -	(2) Active Directory domain controller
-    -	(2) SQL Server Cluster Node
-    -	(1) SQL Server Witness
--	Availability Sets
+- Availability Sets
     - Active Directory Domain Controllers
     - SQL Cluster Nodes and Witness
--	Azure Virtual Network
-    - (4) Subnets
-    - (4) Network Security Groups
 - Azure Active Directory
 - Azure Data Catalog
 - Azure Key Vault
@@ -44,6 +36,15 @@ This solution uses the following Azure services. Details of the deployment archi
 - Azure Security Center
 - Azure SQL Load Balancer
 - Azure Storage
+- Azure Virtual Machines
+    - (1) Bastion Host
+    - (2) Active Directory domain controller
+    - (2) SQL Server Cluster Node
+    - (1) SQL Server Witness
+- Azure Virtual Network
+	- (1) /16 Network
+    - (4) /24 Networks
+    - (4) Network Security Groups
 - Operations Management Suite (OMS)
 - Recovery Services Vault
 - SQL Data Warehouse
