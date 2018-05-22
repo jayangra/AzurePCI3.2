@@ -16,7 +16,7 @@ Azure offers a variety of reporting and analytics services for the customer. Thi
 
 Data in the Azure SQL Data Warehouse is stored in relational tables with columnar storage, a format that significantly reduces the data storage costs while improving query performance.  Depending on usage requirements, Azure SQL Data Warehouse compute resources can be scaled up or down or shut off completely if there are no active processes requiring compute resources.
 
-A SQL Load Balancer manages SQL traffic, ensuring high performance. All virtual machines (VMs) in this reference architecture deploy in an availability set with SQL Server instances configured in an AlwaysOn availability group for high-availability and disaster-recovery capabilities.
+A SQL Load Balancer manages SQL traffic, ensuring high performance. All virtual machines (VMs) in this reference architecture deploy in an availability set with SQL Server instances configured in an Always On availability group for high-availability and disaster-recovery capabilities.
 
 This data warehouse reference architecture also includes an Active Directory (AD) tier for management of resources within the architecture. The AD subnet enables easy adoption under a larger AD forest structure, allowing for continuous operation of the environment even when access to the larger forest is unavailable. All VMs are domain-joined to the AD tier and use AD group policies to enforce security and compliance configurations at the operating system level.
 
