@@ -157,7 +157,7 @@ Additionally, the following OMS solutions are included as a part of this archite
 
 The data flow diagram for this reference architecture is available for [download](https://aka.ms/PCIDWTM) or can be found below. This model can help customers understand the points of potential risk in the system infrastructure when making modifications.
 
-![threat model](AzurePCI3.2/DW/DataWarehouse-TM.png)
+![threat model](DataWarehouse-TM.png)
 
 ## Compliance documentation
 The [Azure Security and Compliance Blueprint – PCI DSS 3.2 Customer Responsibility Matrix](https://aka.ms/PCICRM) lists responsibilities for all PCI DSS 3.2 requirements.
