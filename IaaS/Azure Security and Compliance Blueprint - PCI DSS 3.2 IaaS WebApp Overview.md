@@ -16,33 +16,32 @@ This solution deploys a reference architecture for an IaaS web application with 
 
 This solution uses the following Azure services. Details of the deployment architecture are located in the [deployment architecture](#deployment-architecture) section.
 
-- Azure Virtual Machines
-	- (1) management/bastion (Windows Server 2016 Datacenter)
-	- (2) Active Directory domain controller (Windows Server 2016 Datacenter)
-	- (2) SQL Server cluster node (SQL Server 2017 on Windows Server 2016)
-	- (2) Web/IIS (Windows Server 2016 Datacenter)
 - Availability Sets
 	- (1) Active Directory domain controllers
 	- (1) SQL cluster nodes
 	- (1) Web/IIS
-- Azure Virtual Network
-	- (1) /16 virtual networks
-	- (5) /24 subnets
-	- (5) Network Security Groups
-	- DNS settings are set to both domain controllers
+- Azure Active Directory (AAD)
 - Azure Application Gateway
 	- (1) WAF Application Gateway enabled
 		- firewall mode: prevention
 		- rule set: OWASP 3.0
 		- listener: port 443
-- Azure Storage
-	- (7) Geo-redundant storage accounts
-- Azure Active Directory (AAD)
 - Azure Key Vault
 - Azure Load Balancer
 - Azure Monitor
 - Azure Resource Manager
 - Azure Security Center
+- Azure Storage
+	- (7) Geo-redundant storage accounts
+- Azure Virtual Machines
+	- (1) management/bastion (Windows Server 2016 Datacenter)
+	- (2) Active Directory domain controller (Windows Server 2016 Datacenter)
+	- (2) SQL Server cluster node (SQL Server 2017 on Windows Server 2016)
+	- (2) Web/IIS (Windows Server 2016 Datacenter)
+- Azure Virtual Network
+	- (1) /16 Network
+	- (5) /24 Networks
+	- (5) Network Security Groups
 - Cloud Witness
 - Operations Management Suite (OMS)
 - Recovery Services vault
