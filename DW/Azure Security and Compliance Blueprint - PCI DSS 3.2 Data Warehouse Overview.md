@@ -22,7 +22,7 @@ This data warehouse reference architecture also includes an Active Directory (AD
 
 A VM serves as a management bastion host, providing a secure connection for administrators to access deployed resources. The data loads into the staging area through this management bastion host. **Azure recommends configuring a VPN or Azure ExpressRoute connection for management and data import into the reference architecture subnet.**
 
-![visio](DataWarehouse-RA.png)
+![visio](Azure%20Security%20and%20Compliance%20Blueprint%20-%20PCI%20DSS%203.2%20Data%20Warehouse%20Reference%20Architecture.png)
 
 This solution uses the following Azure services. Details of the deployment architecture are in the [Deployment Architecture](#deployment-architecture) section.
 
@@ -156,7 +156,7 @@ Additionally, the following OMS solutions are included as a part of this archite
 
 The data flow diagram for this reference architecture is available for [download](https://aka.ms/PCIDWTM) or can be found below. This model can help customers understand the points of potential risk in the system infrastructure when making modifications.
 
-![threat model](DataWarehouse-TM.png)
+![threat model](Azure%20Security%20and%20Compliance%20Blueprint%20-%20PCI%20DSS%203.2%20Data%20Warehouse%20Threat%20Model.png)
 
 ## Compliance documentation
 The [Azure Security and Compliance Blueprint – PCI DSS 3.2 Customer Responsibility Matrix](https://aka.ms/PCICRM) lists responsibilities for all PCI DSS 3.2 requirements.
