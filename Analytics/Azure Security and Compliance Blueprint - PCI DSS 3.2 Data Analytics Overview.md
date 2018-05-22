@@ -28,20 +28,24 @@ Azure SQL Database is commonly managed through SQL Server Management Studio (SSM
 
 This solution uses the following Azure services. Details of the deployment architecture are in the [Deployment Architecture](#deployment-architecture) section.
 
-- Azure Functions
-- Azure SQL Database
-- Azure Machine Learning
-- Azure Active Directory
-- Azure Key Vault
-- Operations Management Suite (OMS)
-- Azure Monitor
-- Azure Storage
-- Power BI Dashboard
-- Azure Data Catalog
-- Azure Security Center
 - Application Insights
+- Azure Active Directory (AAD)
+- Azure Data Catalog
+- Azure Disk Encryption
 - Azure Event Grid
-- network security groups
+- Azure Functions
+- Azure Key Vault
+- Azure Machine Learning
+- Azure Monitor
+- Azure Security Center
+- Azure SQL Database
+- Azure Storage
+- Azure Virtual Network
+	- (1) /16 Network
+	- (2) /24 Networks
+	- (2) Network Security Groups
+- Operations Management Suite (OMS)
+- Power BI Dashboard
 
 ## Deployment architecture
 The following section details the deployment and implementation elements.
