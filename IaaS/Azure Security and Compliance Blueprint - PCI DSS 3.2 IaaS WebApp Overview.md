@@ -10,7 +10,7 @@ This reference architecture, associated implementation guide, and threat model a
 - Customers are responsible for conducting appropriate security and compliance assessments of any solution built using this architecture, as requirements may vary based on the specifics of each customer&#39;s implementation.
 
 ## Architecture diagram and components
-This solution deploys a reference architecture for an IaaS web application with a SQL Server backend. The architecture includes a web tier, data tier, Active Directory infrastructure, Application Gateway, and Load Balancer. Virtual machines deployed to the web and data tiers are configured in an availability set, and SQL Server instances are configured in an AlwaysOn availability group for high availability. Virtual machines are domain-joined, and Active Directory group policies are used to enforce security and compliance configurations at the operating system level. A management bastion host provides a secure connection for administrators to access deployed resources. **Azure recommends configuring a VPN or ExpressRoute connection for management and data import into the reference architecture subnet.**
+This solution deploys a reference architecture for an IaaS web application with a SQL Server backend. The architecture includes a web tier, data tier, Active Directory infrastructure, Application Gateway, and Load Balancer. Virtual machines deployed to the web and data tiers are configured in an availability set, and SQL Server instances are configured in an Always On availability group for high availability. Virtual machines are domain-joined, and Active Directory group policies are used to enforce security and compliance configurations at the operating system level. A management bastion host provides a secure connection for administrators to access deployed resources. **Azure recommends configuring a VPN or ExpressRoute connection for management and data import into the reference architecture subnet.**
 
 ![visio](https://raw.githubusercontent.com/jayangra/AzurePCI3.2/master/IaaS/Azure%20Security%20and%20Compliance%20Blueprint%20-%20PCI%20DSS%203.2%20IaaS%20WebApp%20Reference%20Architecture.png)
 
@@ -28,8 +28,8 @@ This solution uses the following Azure services. Details of the deployment archi
 - Azure Virtual Network
 	- (1) /16 virtual networks
 	- (5) /24 subnets
+	- (5) Network Security Groups
 	- DNS settings are set to both domain controllers
-- Azure Load Balancer
 - Azure Application Gateway
 	- (1) WAF Application Gateway enabled
 		- firewall mode: prevention
@@ -37,13 +37,15 @@ This solution uses the following Azure services. Details of the deployment archi
 		- listener: port 443
 - Azure Storage
 	- (7) Geo-redundant storage accounts
-- Cloud Witness
-- Recovery Services vault
-- Azure Key Vault
 - Azure Active Directory (AAD)
+- Azure Key Vault
+- Azure Load Balancer
+- Azure Monitor
 - Azure Resource Manager
-- Operations Management Suite (OMS)
 - Azure Security Center
+- Cloud Witness
+- Operations Management Suite (OMS)
+- Recovery Services vault
 
 ## Deployment architecture
 The following section details the deployment and implementation elements.
