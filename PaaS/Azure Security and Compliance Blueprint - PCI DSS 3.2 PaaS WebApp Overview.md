@@ -48,7 +48,7 @@ The following section details the deployment and implementation elements.
 
 **Azure Resource Manager** : [Azure Resource Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview) enables customers to work with the resources in the solution as a group. Customers can deploy, update, or delete all the resources for the solution in a single, coordinated operation. Customers use a template for deployment and that template can work for different environments such as testing, staging, and production. Resource Manager provides security, auditing, and tagging features to help customers manage their resources after deployment.
 
-**App Service Environment v2** : The [Azure App Service Environment](https://docs.microsoft.com/en-us/azure/app-service/environment/intro) is an App Service feature that provides a fully isolated and dedicated environment for securely running App Service applications at a high scale.
+**App Service Environment v2** : The [Azure App Service Environment (ASE)](https://docs.microsoft.com/en-us/azure/app-service/environment/intro) is an App Service feature that provides a fully isolated and dedicated environment for securely running App Service applications at a high scale.
 
 ASEs are isolated to only run a single customer&#39;s applications and are always deployed into a virtual network. Customers have fine-grained control over both inbound and outbound application network traffic, and applications can establish high-speed secure connections over virtual networks to on-premises corporate resources.
 
@@ -62,6 +62,8 @@ Use of ASEs for this architecture are allowed for the following controls/configu
 - Control [inbound traffic N/W ports](https://docs.microsoft.com/en-us/azure/app-service-web/app-service-app-service-environment-control-inbound-traffic)
 - [WAF – Restrict Data](https://docs.microsoft.com/en-us/azure/app-service-web/app-service-app-service-environment-web-application-firewall)
 - Allow [Azure SQL Database traffic](https://docs.microsoft.com/en-us/azure/app-service-web/app-service-app-service-environment-network-architecture-overview)
+
+The [Guidance and recommendations section](## Guidance and recommendations) contains additional information about ASEs.
 
 **Azure Web App** : [Azure Web Apps](https://docs.microsoft.com/en-us/azure/app-service/) enables customers to build and host web applications in the programming language of their choice without managing infrastructure. It offers auto-scaling and high availability, supports both Windows and Linux, and enables automated deployments from GitHub, Visual Studio Team Services, or any Git repo.
 
@@ -203,7 +205,7 @@ The use of ASEs can significantly decrease the customer burden of configuring in
 - Outbound traffic control
   - If an outbound static IP address is required for the app service, ASEs provides an outbound traffic control solution compliant with PCI DSS 3.2
 
-In electing to forego ASEs, a PCI DSS 3.2 compliant solution would require more hands-on configuration by the customer. As payment processing works with sensitive data assets, engineering a solution without ASEs greatly increases the customer burden for maintaining the environment. ASE as a PaaS offering eases the burden of maintaining the environment and ensures assets are secured.
+If electing to forego an App Service Environment, a PCI DSS 3.2 compliant solution will require more hands-on configuration by the customer. As payment processing works with sensitive data assets, engineering a solution without ASEs greatly increases the customer burden for maintaining the environment. ASE as a PaaS offering eases the burden of maintaining the environment and ensures assets are secured.
 
 ## Disclaimer
 
