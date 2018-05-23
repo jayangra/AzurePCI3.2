@@ -197,9 +197,9 @@ Best practices for implementing a secure hybrid network that extends an on-premi
 The use of ASEs can significantly decrease the customer burden of configuring infrastructure that securely hosts customer assets in a PCI DSS 3.2 compliant manner. ASEs offers the following benefits that would otherwise require a customer created solution:
 
 - Scalability
- - ASEs offers the option for configuring "autoscale" based on load metrics, available budget, or a defined schedule  
+  - ASEs offers the option for configuring "autoscale" based on load metrics, available budget, or a defined schedule  
 - App environment isolation
- - ASE assets are fully isolated and offer dedicated compute specific to the application that will be deployed into an ASE
+  - ASE assets are fully isolated and offer dedicated compute specific to the application that will be deployed into an ASE
 - Outbound traffic control
   - If an outbound static IP address is required for the app service, ASEs provides an outbound traffic control solution compliant with PCI DSS 3.2
 
