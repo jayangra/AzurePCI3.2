@@ -194,16 +194,16 @@ Because traffic within the VPN tunnel does traverse the Internet with a site-to-
 Best practices for implementing a secure hybrid network that extends an on-premises network to Azure are [available](https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/dmz/secure-vnet-hybrid).
 
 ### Azure App Service Environment
-Azure [App Service Environment](https://docs.microsoft.com/en-us/azure/app-service/environment/intro) (ASE) can significantly decrease the customer burden of configuring infrastructure that securely hosts customer assets in a PCI DSS 3.2 compliant manner. ASE offers the following benefits that would otherwise require a customer created solution:
+The use of ASEs can significantly decrease the customer burden of configuring infrastructure that securely hosts customer assets in a PCI DSS 3.2 compliant manner. ASEs offers the following benefits that would otherwise require a customer created solution:
 
 - Scalability
- - ASE offers the option for configuring "autoscale" based on load metrics, available budget, or a defined schedule  
+ - ASEs offers the option for configuring "autoscale" based on load metrics, available budget, or a defined schedule  
 - App environment isolation
  - ASE assets are fully isolated and offer dedicated compute specific to the application that will be deployed into an ASE
 - Outbound traffic control
-  - If an outbound static IP address is required for the app service, ASE provides an outbound traffic control solution compliant with PCI DSS 3.2
+  - If an outbound static IP address is required for the app service, ASEs provides an outbound traffic control solution compliant with PCI DSS 3.2
 
-In electing to forego ASE, a PCI DSS 3.2 compliant solution would require more hands-on configuration by the customer. As payment processing works with sensitive data assets, engineering a solution without ASE greatly increases the customer burden for maintaining the environment. ASE as a PaaS offering eases the burden of maintaining the environment and ensures assets are secured.
+In electing to forego ASEs, a PCI DSS 3.2 compliant solution would require more hands-on configuration by the customer. As payment processing works with sensitive data assets, engineering a solution without ASEs greatly increases the customer burden for maintaining the environment. ASE as a PaaS offering eases the burden of maintaining the environment and ensures assets are secured.
 
 ## Disclaimer
 
