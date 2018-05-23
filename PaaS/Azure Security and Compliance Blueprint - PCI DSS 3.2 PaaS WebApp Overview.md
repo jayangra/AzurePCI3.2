@@ -2,7 +2,7 @@
 
 ## Overview
 
-This Azure Security and Compliance Blueprint provides guidance for the deployment of a Payment Card Industry Data Security Standards (PCI DSS 3.2) compliant platform as a service (PaaS) environment suitable for the collection, storage, and retrieval of cardholder data. It showcases a common reference architecture and demonstrates the proper handling of credit card data (including card number, expiration, and verification data) in a secure, compliant, multi-tier environment. This blueprint illustrates an end-to-end solution to meet the needs of organizations seeking a cloud-based approach to reducing the burden and cost of deployment. For more information about PCI DSS 3.2 requirements and this solution, see [PCI DSS Requirements - High-Level Overview](https://docs.microsoft.com/en-us/azure/security/blueprints/pci-dss-requirements-overview).
+This Azure Security and Compliance Blueprint provides guidance for the deployment of a Payment Card Industry Data Security Standards (PCI DSS 3.2) compliant platform as a service (PaaS) environment suitable for the collection, storage, and retrieval of cardholder data. It showcases a common reference architecture and demonstrates the proper handling of credit card data (including card number, expiration, and verification data) in a secure, compliant, multi-tier environment. This blueprint illustrates an end-to-end solution to meet the needs of organizations seeking a cloud-based approach to reducing the burden and cost of deployment.
 
 This reference architecture, associated implementation guide, and threat model are intended to serve as a foundation for customers to adapt to PCI DSS 3.2 specific requirements and should not be used as-is in a production environment. Please note the following:
 
@@ -192,6 +192,18 @@ By implementing a secure VPN tunnel with Azure, a virtual private connection bet
 Because traffic within the VPN tunnel does traverse the Internet with a site-to-site VPN, Microsoft offers another, even more secure connection option. Azure ExpressRoute is a dedicated WAN link between Azure and an on-premises location or an Exchange hosting provider. As ExpressRoute connections do not go over the Internet, these connections offer more reliability, faster speeds, lower latencies, and higher security than typical connections over the Internet. Furthermore, because this is a direct connection of customer&#39;s telecommunication provider, the data does not travel over the Internet and therefore is not exposed to it.
 
 Best practices for implementing a secure hybrid network that extends an on-premises network to Azure are [available](https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/dmz/secure-vnet-hybrid).
+
+### Azure App Service Environment
+Azure [App Service Environment](https://docs.microsoft.com/en-us/azure/app-service/environment/intro) (ASE) can significantly decrease the customer burden of configuring infrastructure that securely hosts customer assets in a PCI DSS 3.2 compliant manner. ASE offers the following benefits that would otherwise require a customer created solution:
+
+- Scalability
+ - ASE offers the option for configuring "autoscale" based on load metrics, available budget, or a defined schedule  
+- App environment isolation
+ - ASE assets are fully isolated and offer dedicated compute specific to the application that will be deployed into an ASE
+- Outbound traffic control
+  - If an outbound static IP address is required for the app service, ASE provides an outbound traffic control solution compliant with PCI DSS 3.2
+
+In electing to forego ASE, a PCI DSS 3.2 compliant solution would require more hands-on configuration by the customer. As payment processing works with sensitive data assets, engineering a solution without ASE greatly increases the customer burden for maintaining the environment. ASE as a PaaS offering eases the burden of maintaining the environment and ensures assets are secured.
 
 ## Disclaimer
 
