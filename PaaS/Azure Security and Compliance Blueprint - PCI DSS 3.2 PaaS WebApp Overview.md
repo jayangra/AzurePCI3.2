@@ -196,7 +196,7 @@ Because traffic within the VPN tunnel does traverse the Internet with a site-to-
 Best practices for implementing a secure hybrid network that extends an on-premises network to Azure are [available](https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/dmz/secure-vnet-hybrid).
 
 ### Azure App Service Environment
-The use of ASEs can significantly decrease the customer burden of configuring infrastructure that securely hosts customer assets in a PCI DSS 3.2 compliant manner. ASEs offers the following benefits that would otherwise require a customer created solution:
+The use of ASEs can significantly decrease the customer burden of configuring infrastructure that securely hosts customer assets in a PCI DSS 3.2 compliant manner. ASEs offer the following benefits that would otherwise require a customer created solution:
 
 - Scalability
   - ASEs offer the option for configuring "autoscale" based on load metrics, available budget, or a defined schedule.
