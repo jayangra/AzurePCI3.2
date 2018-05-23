@@ -63,7 +63,7 @@ Use of ASEs for this architecture are allowed for the following controls/configu
 - [WAF – Restrict Data](https://docs.microsoft.com/en-us/azure/app-service-web/app-service-app-service-environment-web-application-firewall)
 - Allow [Azure SQL Database traffic](https://docs.microsoft.com/en-us/azure/app-service-web/app-service-app-service-environment-network-architecture-overview)
 
-The [Guidance and recommendations](#Guidance and recommendations) section contains additional information about ASEs.
+The [Guidance and recommendations](#guidance-and-recommendations) section contains additional information about ASEs.
 
 **Azure Web App** : [Azure Web Apps](https://docs.microsoft.com/en-us/azure/app-service/) enables customers to build and host web applications in the programming language of their choice without managing infrastructure. It offers auto-scaling and high availability, supports both Windows and Linux, and enables automated deployments from GitHub, Visual Studio Team Services, or any Git repo.
 
