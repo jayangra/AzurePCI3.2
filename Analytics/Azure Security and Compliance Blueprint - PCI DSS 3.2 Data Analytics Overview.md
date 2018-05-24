@@ -50,13 +50,13 @@ This solution uses the following Azure services. Details of the deployment archi
 ## Deployment architecture
 The following section details the deployment and implementation elements.
 
-**Azure Event Grid**
+**Azure Event Grid**:
 [Azure Event Grid](https://docs.microsoft.com/en-us/azure/event-grid/overview) allows customers to easily build applications with event-based architectures. Users select the Azure resource they would like to subscribe to, and give the event handler or webhook an endpoint to send the event to. Customers can secure webhook endpoints by adding query parameters to the webhook URL when creating an Event Subscription. Azure Event Grid only supports HTTPS webhook endpoints. Azure Event Grid allows customers to control the level of access given to different users to do various management operations such as list event subscriptions, create new ones, and generate keys. Event Grid utilizes Azure Role-Based Access Control (RBAC).
 
-**Azure Functions**
+**Azure Functions**:
 [Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview) is a server-less compute service that enables users to run code on-demand without having to explicitly provision or manage infrastructure. Use Azure Functions to run a script or piece of code in response to a variety of events.
 
-**Azure Machine Learning**
+**Azure Machine Learning**:
 [Azure Machine Learning](https://docs.microsoft.com/en-us/azure/machine-learning/preview/) is a data science technique that allows computers to use existing data to forecast future behaviors, outcomes, and trends.
 
 **Azure Data Catalog**:
@@ -82,10 +82,10 @@ Azure encrypts all communications to and from Azure datacenters by default. All 
 
 The architecture protects data at rest through encryption, database auditing, and other measures.
 
-**Azure Storage**
+**Azure Storage**:
 To meet encrypted data at rest requirements, all [Azure Storage](https://azure.microsoft.com/services/storage/) uses [Storage Service Encryption](https://docs.microsoft.com/azure/storage/storage-service-encryption).  This helps protect and safeguard cardholder data in support of organizational security commitments and compliance requirements defined by PCI DSS 3.2.
 
-**Azure Disk Encryption**
+**Azure Disk Encryption**:
 [Azure Disk Encryption](https://docs.microsoft.com/azure/security/azure-security-disk-encryption) leverages the BitLocker feature of Windows to provide volume encryption for data disks. The solution integrates with Azure Key Vault to help control and manage the disk-encryption keys.
 
 **Azure SQL Database**:
@@ -109,7 +109,7 @@ The following technologies provide capabilities to manage access to cardholder d
 -	[AAD Identity Protection](https://docs.microsoft.com/azure/active-directory/active-directory-identityprotection) detects potential vulnerabilities affecting an organization’s identities, configures automated responses to detected suspicious actions related to an organization’s identities, and investigates suspicious incidents to take appropriate action to resolve them.
 
 ### Security
-**Secrets management**
+**Secrets management**:
 The solution uses [Azure Key Vault](https://azure.microsoft.com/services/key-vault/) for the management of keys and secrets. Azure Key Vault helps safeguard cryptographic keys and secrets used by cloud applications and services. The following Azure Key Vault capabilities help customers protect cardholder data and access to such data:
 - Advanced access policies are configured on a need basis.
 - Key Vault access policies are defined with minimum required permissions to keys and secrets.
@@ -139,10 +139,10 @@ Additionally, the following OMS solutions are included as a part of this archite
 -	[Azure Activity Logs](https://docs.microsoft.com/azure/log-analytics/log-analytics-activity): The Activity Log Analytics solution assists with analysis of the Azure activity logs across all Azure subscriptions for a customer.
 -	[Change Tracking](https://docs.microsoft.com/en-us/azure/automation/automation-change-tracking): The Change Tracking solution allows customers to easily identify changes in the environment.
 
-**Azure Monitor**
+**Azure Monitor**:
 [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/) helps customers track performance, maintain security, and identify trends by enabling organizations to audit, create alerts, and archive data, including tracking API calls in customers' Azure resources.
 
-**Application Insights**
+**Application Insights**:
 [Application Insights](https://docs.microsoft.com/en-us/azure/application-insights/) is an extensible Application Performance Management (APM) service for web developers on multiple platforms. Use it to monitor live web application. It detects performance anomalies and includes powerful analytics tools to help diagnose issues and to understand what users actually do with the app. It's designed to help users continuously improve performance and usability.
 
 ## Threat model
