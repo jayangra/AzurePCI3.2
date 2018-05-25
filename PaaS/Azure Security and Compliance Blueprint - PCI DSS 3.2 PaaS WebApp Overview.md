@@ -16,7 +16,7 @@ This solution provides a reference architecture for a PaaS web application with 
 
 ![Reference Architecture](Azure%20Security%20and%20Compliance%20Blueprint%20-%20PCI%20DSS%203.2%20PaaS%20WebApp%20Reference%20Architecture.png)
 
-This solution uses the following Azure services. Details of the deployment architecture are located in the [deployment architecture](https://github.com/sukykaur/AzureGDPR/blob/master/PaaSWebAppOverview.md#deployment-architecture) section.
+This solution uses the following Azure services. Details of the deployment architecture are in the [Deployment Architecture](#deployment-architecture) section.
 
 - App Service Environment v2
 - Application Gateway
