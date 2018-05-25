@@ -48,9 +48,9 @@ The following section details the deployment and implementation elements.
 
 **Azure Resource Manager** : [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) enables customers to work with the resources in the solution as a group. Customers can deploy, update, or delete all the resources for the solution in a single, coordinated operation. Customers use a template for deployment and that template can work for different environments such as testing, staging, and production. Resource Manager provides security, auditing, and tagging features to help customers manage their resources after deployment.
 
-**App Service Environment v2** : The [Azure App Service Environment (ASE)](https://docs.microsoft.com/azure/app-service/environment/intro) is an App Service feature that provides a fully isolated and dedicated environment for securely running App Service applications at a high scale.
+**App Service Environment v2** : The [Azure App Service Environment (ASE)](https://docs.microsoft.com/azure/app-service/environment/intro) is an App Service feature that provides a fully isolated and dedicated environment for securely running App Service applications at a high scale. This isolation feature is required in order to meet PCI compliance requirements.
 
-ASEs are isolated to only run a single customer&#39;s applications and are always deployed into a virtual network. Customers have fine-grained control over both inbound and outbound application network traffic, and applications can establish high-speed secure connections over virtual networks to on-premises corporate resources.
+ASEs are isolated to only run a single customer's applications and are always deployed into a virtual network. This isolation feature enables the reference architecture to have complete tenant isolation, prohibiting Azure’s multi-tenant resources from enumerating the deployed ASE. Customers have fine-grained control over both inbound and outbound application network traffic and can establish high-speed, secure connections over virtual networks to on-premises corporate resources. Customers also have the ability to “autoscale” with ASE based on load metrics, available budget, or a defined schedule.
 
 Use of ASEs for this architecture are allowed for the following controls/configurations:
 
@@ -62,8 +62,6 @@ Use of ASEs for this architecture are allowed for the following controls/configu
 - Control [inbound traffic N/W ports](https://docs.microsoft.com/azure/app-service-web/app-service-app-service-environment-control-inbound-traffic)
 - [WAF – Restrict Data](https://docs.microsoft.com/azure/app-service-web/app-service-app-service-environment-web-application-firewall)
 - Allow [Azure SQL Database traffic](https://docs.microsoft.com/azure/app-service-web/app-service-app-service-environment-network-architecture-overview)
-
-The [Guidance and recommendations](#guidance-and-recommendations) section contains additional information about ASEs.
 
 **Azure Web App** : [Azure Web Apps](https://docs.microsoft.com/azure/app-service/) enables customers to build and host web applications in the programming language of their choice without managing infrastructure. It offers auto-scaling and high availability, supports both Windows and Linux, and enables automated deployments from GitHub, Visual Studio Team Services, or any Git repo.
 
@@ -194,18 +192,6 @@ By implementing a secure VPN tunnel with Azure, a virtual private connection bet
 Because traffic within the VPN tunnel does traverse the Internet with a site-to-site VPN, Microsoft offers another, even more secure connection option. Azure ExpressRoute is a dedicated WAN link between Azure and an on-premises location or an Exchange hosting provider. As ExpressRoute connections do not go over the Internet, these connections offer more reliability, faster speeds, lower latencies, and higher security than typical connections over the Internet. Furthermore, because this is a direct connection of customer&#39;s telecommunication provider, the data does not travel over the Internet and therefore is not exposed to it.
 
 Best practices for implementing a secure hybrid network that extends an on-premises network to Azure are [available](https://docs.microsoft.com/azure/architecture/reference-architectures/dmz/secure-vnet-hybrid).
-
-### Azure App Service Environment
-The use of ASEs can significantly decrease the customer burden of configuring infrastructure that securely hosts customer assets in a PCI DSS 3.2 compliant manner. ASEs offer the following benefits that would otherwise require a customer created solution:
-
-- Scalability
-  - ASEs offer the option for configuring "autoscale" based on load metrics, available budget, or a defined schedule.
-- App environment isolation
-  - ASE assets are fully isolated and offer dedicated compute specific to the application that will be deployed into an ASE.
-- Outbound traffic control
-  - If an outbound static IP address is required for the app service, ASEs provide an outbound traffic control solution compliant with PCI DSS 3.2.
-
-If electing to forego an App Service Environment, a PCI DSS 3.2 compliant solution will require more hands-on configuration by the customer. As payment processing works with sensitive data assets, engineering a solution without ASEs greatly increases the customer burden for maintaining the environment. ASE as a PaaS offering eases the burden of maintaining the environment and ensures assets are secured.
 
 ## Disclaimer
 
