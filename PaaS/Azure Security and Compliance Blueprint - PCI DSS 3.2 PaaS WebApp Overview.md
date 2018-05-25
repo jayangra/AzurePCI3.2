@@ -48,14 +48,14 @@ The following section details the deployment and implementation elements.
 
 **Azure Resource Manager** : [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) enables customers to work with the resources in the solution as a group. Customers can deploy, update, or delete all the resources for the solution in a single, coordinated operation. Customers use a template for deployment and that template can work for different environments such as testing, staging, and production. Resource Manager provides security, auditing, and tagging features to help customers manage their resources after deployment.
 
-**App Service Environment v2** : The [Azure App Service Environment (ASE)](https://docs.microsoft.com/azure/app-service/environment/intro) is an App Service feature that provides a fully isolated and dedicated environment for securely running App Service applications at a high scale. This isolation feature is required in order to meet PCI compliance requirements.
+**App Service Environment v2** : The Azure App Service Environment is an App Service feature that provides a fully isolated and dedicated environment for securely running App Service applications at a high scale. This isolation feature is required to meet PCI compliance requirements.
 
-ASEs are isolated to only run a single customer's applications and are always deployed into a virtual network. This isolation feature enables the reference architecture to have complete tenant isolation, prohibiting Azure’s multi-tenant resources from enumerating the deployed ASE. Customers have fine-grained control over both inbound and outbound application network traffic and can establish high-speed, secure connections over virtual networks to on-premises corporate resources. Customers also have the ability to “autoscale” with ASE based on load metrics, available budget, or a defined schedule.
+App Service Environments are isolated to only run a single customer's applications and are always deployed into a virtual network. This isolation feature enables the reference architecture to have complete tenant isolation, removing it from Azure’s multi-tenant environment prohibiting those multi-tenants from enumerating the deployed App Service Environmentresources. Customers have fine-grained control over both inbound and outbound application network traffic, and applications can establish high-speed secure connections over virtual networks to on-premises corporate resources. Customers can “auto-scale” with App Service Environment based on load metrics, available budget, or a defined schedule.
 
-Use of ASEs for this architecture are allowed for the following controls/configurations:
+Utilize App Service Environments for the following controls/configurations:
 
 - Host inside a secured Azure Virtual Network and network security rules
-- ASE configured with self-signed ILB certificate for HTTPS communication
+- Self-signed ILB certificate for HTTPS communication
 - [Internal Load Balancing mode](https://docs.microsoft.com/azure/app-service-web/app-service-environment-with-internal-load-balancer) (mode 3)
 - Disable [TLS 1.0](https://docs.microsoft.com/azure/app-service-web/app-service-app-service-environment-custom-settings)
 - Change [TLS Cipher](https://docs.microsoft.com/azure/app-service-web/app-service-app-service-environment-custom-settings)
