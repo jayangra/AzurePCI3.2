@@ -1,4 +1,4 @@
-# Azure Security and Compliance Blueprint: PaaS Web Application for PCI DSS 3.2
+# Azure Security and Compliance Blueprint: PaaS Web Application for PCI DSS
 
 ## Overview
 
