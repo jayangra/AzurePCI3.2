@@ -24,7 +24,7 @@ For enhanced security, this architecture manages resources with Azure Active Dir
 
 Azure SQL Database is commonly managed through SQL Server Management Studio (SSMS), which runs from a local machine configured to access the Azure SQL Database via a secure VPN or ExpressRoute connection. **Azure recommends configuring a VPN or ExpressRoute connection for management and data import into the reference architecture resource group**.
 
-![Reference Architecture](Azure%20Security%20and%20Compliance%20Blueprint%20-%20PCI%20DSS%203.2%20Data%20Analytics%20Reference%20Architecture.png)
+![Reference Architecture](Azure%20Security%20and%20Compliance%20Blueprint%20-%20PCI%20DSS%20Data%20Analytics%20Reference%20Architecture.png)
 
 This solution uses the following Azure services. Details of the deployment architecture are in the [Deployment Architecture](#deployment-architecture) section.
 
@@ -149,7 +149,7 @@ Additionally, the following Operations Management Suite solutions are included a
 
 The data flow diagram for this reference architecture is available for [download](https://aka.ms/PCIAnalyticsTM) or can be found below. This model can help customers understand the points of potential risk in the system infrastructure when making modifications.
 
-![Threat Model](https://raw.githubusercontent.com/jayangra/AzurePCI3.2/master/Analytics/Azure%20Security%20and%20Compliance%20Blueprint%20-%20PCI%20DSS%203.2%20Data%20Analytics%20Threat%20Model.png)
+![Threat Model](https://raw.githubusercontent.com/jayangra/AzurePCI3.2/master/Analytics/Azure%20Security%20and%20Compliance%20Blueprint%20-%20PCI%20DSS%20Data%20Analytics%20Threat%20Model.png)
 
 ## Compliance documentation
 The [Azure Security and Compliance Blueprint - PCI DSS Customer Responsibility Matrix](https://aka.ms/PCICRM) lists responsibilities for all PCI DSS 3.2 requirements.
