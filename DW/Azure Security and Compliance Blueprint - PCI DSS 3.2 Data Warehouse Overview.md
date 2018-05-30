@@ -1,4 +1,8 @@
+<<<<<<< HEAD:DW/Azure Security and Compliance Blueprint - PCI DSS 3.2 Data Warehouse Overview.md
 # Azure Security and Compliance Blueprint: Data Warehouse for PCI DSS 3.2
+=======
+# Azure Security and Compliance Blueprint: Data Warehouse for PCI DSS
+>>>>>>> parent of d8cec71... removed 3.2 from name:DW/Azure Security and Compliance Blueprint - PCI DSS 3.2 Data Warehouse Overview.md
 
 ## Overview
 This Azure Security and Compliance Blueprint provides guidance for the deployment of a data warehouse architecture in Azure that assists with the requirements of Payment Card Industry Data Security Standards (PCI DSS 3.2). It showcases a common reference architecture and demonstrates the proper handling of credit card data (including card number, expiration, and verification data) in a secure, compliant, multi-tier environment. This blueprint demonstrates ways in which customers can meet specific security and compliance requirements and serves as a foundation for customers to build and configure their own data warehouse solutions in Azure.
@@ -22,19 +26,31 @@ This data warehouse reference architecture also includes an Active Directory (AD
 
 A VM serves as a management bastion host, providing a secure connection for administrators to access deployed resources. The data loads into the staging area through this management bastion host. **Azure recommends configuring a VPN or Azure ExpressRoute connection for management and data import into the reference architecture subnet.**
 
+<<<<<<< HEAD:DW/Azure Security and Compliance Blueprint - PCI DSS 3.2 Data Warehouse Overview.md
 ![visio](Azure%20Security%20and%20Compliance%20Blueprint%20-%20PCI%20DSS%203.2%20Data%20Warehouse%20Reference%20Architecture.png)
+=======
+![Reference Architecture](Azure%20Security%20and%20Compliance%20Blueprint%20-%20PCI%20DSS%203.2%20Data%20Warehouse%20Reference%20Architecture.png)
+>>>>>>> parent of d8cec71... removed 3.2 from name:DW/Azure Security and Compliance Blueprint - PCI DSS 3.2 Data Warehouse Overview.md
 
 This solution uses the following Azure services. Details of the deployment architecture are in the [Deployment Architecture](#deployment-architecture) section.
 
 - Availability Sets
     - Active Directory Domain Controllers
     - SQL Cluster Nodes and Witness
+<<<<<<< HEAD:DW/Azure Security and Compliance Blueprint - PCI DSS 3.2 Data Warehouse Overview.md
 - Azure Active Directory (AAD)
+=======
+- Azure Active Directory
+>>>>>>> parent of d8cec71... removed 3.2 from name:DW/Azure Security and Compliance Blueprint - PCI DSS 3.2 Data Warehouse Overview.md
 - Azure Data Catalog
 - Azure Key Vault
 - Azure Monitor
 - Azure Security Center
+<<<<<<< HEAD:DW/Azure Security and Compliance Blueprint - PCI DSS 3.2 Data Warehouse Overview.md
 - Azure SQL Load Balancer
+=======
+- Azure Load Balancer
+>>>>>>> parent of d8cec71... removed 3.2 from name:DW/Azure Security and Compliance Blueprint - PCI DSS 3.2 Data Warehouse Overview.md
 - Azure Storage
 - Azure Virtual Machines
     - (1) Bastion Host
@@ -45,7 +61,11 @@ This solution uses the following Azure services. Details of the deployment archi
     - (1) /16 Network
     - (4) /24 Networks
     - (4) Network Security Groups
+<<<<<<< HEAD:DW/Azure Security and Compliance Blueprint - PCI DSS 3.2 Data Warehouse Overview.md
 - Operations Management Suite (OMS)
+=======
+- Operations Management Suite
+>>>>>>> parent of d8cec71... removed 3.2 from name:DW/Azure Security and Compliance Blueprint - PCI DSS 3.2 Data Warehouse Overview.md
 - Recovery Services Vault
 - SQL Data Warehouse
 - SQL Server Reporting Services
@@ -55,6 +75,7 @@ The following section details the deployment and implementation elements.
 
 **SQL Data Warehouse**: [SQL Data Warehouse](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-overview-what-is) is an Enterprise Data Warehouse (EDW) that leverages Massively Parallel Processing (MPP) to quickly run complex queries across petabytes of data, allowing users to efficiently identify cardholder data. Users can use simple PolyBase T-SQL queries to import big data into the SQL Data Warehouse and utilize the power of MPP to run high-performance analytics.
 
+<<<<<<< HEAD:DW/Azure Security and Compliance Blueprint - PCI DSS 3.2 Data Warehouse Overview.md
 **SQL Server Reporting Services (SSRS)**: [SQL Server Reporting Services](https://docs.microsoft.com/en-us/sql/reporting-services/report-data/sql-azure-connection-type-ssrs) provides quick creation of reports with tables, charts, maps, gauges, matrixes, and more for Azure SQL Data Warehouse.
 
 **Data Catalog**: [Data Catalog](https://docs.microsoft.com/azure/data-catalog/data-catalog-what-is-data-catalog) makes data sources easily discoverable and understandable by the users who manage the data. Common data sources can be registered, tagged, and searched for cardholder data. The data remains in its existing location, but a copy of its metadata is added to Data Catalog, along with a reference to the data source location. The metadata is also indexed to make each data source easily discoverable via search and understandable to the users who discover it.
@@ -64,12 +85,24 @@ The following section details the deployment and implementation elements.
 This solution creates a VM as a domain-joined bastion host with the following configurations:
 -	[Antimalware extension](https://docs.microsoft.com/azure/security/azure-security-antimalware)
 -	[OMS extension](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-extensions-oms)
+=======
+**SQL Server Reporting Services (SSRS)**: [SQL Server Reporting Services](https://docs.microsoft.com/sql/reporting-services/report-data/sql-azure-connection-type-ssrs) provides quick creation of reports with tables, charts, maps, gauges, matrixes, and more for Azure SQL Data Warehouse.
+
+**Data Catalog**: [Data Catalog](https://docs.microsoft.com/azure/data-catalog/data-catalog-what-is-data-catalog) makes data sources easily discoverable and understandable by the users who manage the data. Common data sources can be registered, tagged, and searched for cardholder data. The data remains in its existing location, but a copy of its metadata is added to Data Catalog, along with a reference to the data source location. The metadata is also indexed to make each data source easily discoverable via search and understandable to the users who discover it.
+
+**Bastion Host**: The bastion host is the single point of entry that allows users to access the deployed resources in this environment. The bastion host provides a secure connection to deployed resources by only allowing remote traffic from public IP addresses on a safe list. To permit remote desktop (RDP) traffic, the source of the traffic needs to be defined in the Network Security Group.
+
+This solution creates a VM as a domain-joined bastion host with the following configurations:
+-	[Antimalware extension](https://docs.microsoft.com/azure/security/azure-security-antimalware)
+-	[Operations Management Suite extension](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-extensions-oms)
+>>>>>>> parent of d8cec71... removed 3.2 from name:DW/Azure Security and Compliance Blueprint - PCI DSS 3.2 Data Warehouse Overview.md
 -	[Azure Diagnostics extension](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-extensions-diagnostics-template)
 -	[Azure Disk Encryption](https://docs.microsoft.com/azure/security/azure-security-disk-encryption) using Azure Key Vault
 -	An [auto-shutdown policy](https://azure.microsoft.com/blog/announcing-auto-shutdown-for-vms-using-azure-resource-manager/) to reduce consumption of VM resources when not in use
 -	[Windows Defender Credential Guard](https://docs.microsoft.com/windows/access-protection/credential-guard/credential-guard) enabled so that credentials and other secrets run in a protected environment that is isolated from the running operating system
 
 ### Virtual network
+<<<<<<< HEAD:DW/Azure Security and Compliance Blueprint - PCI DSS 3.2 Data Warehouse Overview.md
 This reference architecture defines a private VNet with an address space of 10.0.0.0/16.
 
 **Network security groups**: [NSGs](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg) contain Access Control Lists (ACLs) that allow or deny traffic within a VNet. NSGs can be used to secure traffic at a subnet or individual VM level. The following NSGs exist:
@@ -83,6 +116,21 @@ Each of the NSGs have specific ports and protocols open so that the solution can
   -	OMS Log Analytics is connected to the [NSG's diagnostics](https://github.com/krnese/AzureDeploy/blob/master/AzureMgmt/AzureMonitor/nsgWithDiagnostics.json)
 
 **Subnets**: Each subnet is associated with its corresponding NSG.
+=======
+This reference architecture defines a private Virtual Network with an address space of 10.0.0.0/16.
+
+**Network security groups**: [Network Security Groups](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg) contain Access Control Lists (ACLs) that allow or deny traffic within a Virtual Network. Network Security Groups can be used to secure traffic at a subnet or individual VM level. The following Network Security Groups exist:
+  -	An Network Security Group for the Data Tier (SQL Server Clusters, SQL Server Witness, and SQL Load Balancer)
+  -	An Network Security Group for the management bastion host
+  -	An Network Security Group for Active Directory
+  - An Network Security Group for SQL Server Reporting Services
+
+Each of the Network Security Groups have specific ports and protocols open so that the solution can work securely and correctly. In addition, the following configurations are enabled for each Network Security Group:
+  -	[Diagnostic logs and events](https://docs.microsoft.com/azure/virtual-network/virtual-network-nsg-manage-log) are enabled and stored in a storage account
+  -	Operations Management Suite Log Analytics is connected to the [Network Security Group's diagnostics](https://github.com/krnese/AzureDeploy/blob/master/AzureMgmt/AzureMonitor/nsgWithDiagnostics.json)
+
+**Subnets**: Each subnet is associated with its corresponding Network Security Group.
+>>>>>>> parent of d8cec71... removed 3.2 from name:DW/Azure Security and Compliance Blueprint - PCI DSS 3.2 Data Warehouse Overview.md
 
 ### Data at rest
 The architecture protects data at rest through multiple measures, including encryption and database auditing.
@@ -103,6 +151,7 @@ The Azure SQL Database instance uses the following database security measures:
 -	[Always Encrypted Columns](https://docs.microsoft.com/azure/sql-database/sql-database-always-encrypted-azure-key-vault) ensure that sensitive cardholder data never appears as plaintext inside the database system. After enabling data encryption, only client applications or app servers with access to the keys can access plaintext data.
 - The [Extended Properties](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-addextendedproperty-transact-sql) feature can be used to discontinue the processing of data subjects, as it allows users to add custom properties to database objects and tag data as "Discontinued" to support application logic to prevent the processing of associated cardholder data.
 - [Row-Level Security](https://docs.microsoft.com/sql/relational-databases/security/row-level-security) enables users to define policies to restrict access to data to discontinue processing.
+<<<<<<< HEAD:DW/Azure Security and Compliance Blueprint - PCI DSS 3.2 Data Warehouse Overview.md
 - [SQL Database Dynamic Data Masking (DDM)](https://docs.microsoft.com/azure/sql-database/sql-database-dynamic-data-masking-get-started) limits sensitive cardholder data exposure by masking the data to non-privileged users or applications. DDM can automatically discover potentially sensitive data and suggest the appropriate masks to be applied. This helps to identify and reduce access to cardholder data such that it does not exit the database via unauthorized access. **Note: Customers will need to adjust DDM settings to adhere to their database schema.**
 
 ### Identity management
@@ -112,6 +161,16 @@ The following technologies provide capabilities to manage access to cardholder d
 -	[Azure Role-Based Access Control (RBAC)](https://docs.microsoft.com/azure/active-directory/role-based-access-control-configure) enables administrators to define fine-grained access permissions to grant only the amount of access that users need to perform their jobs. Instead of giving every user unrestricted permissions for Azure resources, administrators can allow only certain actions for accessing cardholder data. Subscription access is limited to the subscription administrator.
 - [AAD Privileged Identity Management (PIM)](https://docs.microsoft.com/azure/active-directory/active-directory-privileged-identity-management-getting-started) enables customers to minimize the number of users who have access to certain information such as cardholder data.  Administrators can use AAD Privileged Identity Management to discover, restrict, and monitor privileged identities and their access to resources. This functionality can also be used to enforce on-demand, just-in-time administrative access when needed.
 - [AAD Identity Protection](https://docs.microsoft.com/azure/active-directory/active-directory-identityprotection) detects potential vulnerabilities affecting an organization’s identities, configures automated responses to detected suspicious actions related to an organization’s identities, and investigates suspicious incidents to take appropriate action to resolve them.
+=======
+- [SQL Database dynamic data masking](https://docs.microsoft.com/azure/sql-database/sql-database-dynamic-data-masking-get-started) limits sensitive cardholder data exposure by masking the data to non-privileged users or applications. Dynamic data masking can automatically discover potentially sensitive data and suggest the appropriate masks to be applied. This helps to identify and reduce access to cardholder data such that it does not exit the database via unauthorized access. Note, it is the customers responsibility to adjust dynamic data masking settings to adhere to their database schema.
+### Identity management
+The following technologies provide capabilities to manage access to cardholder data in the Azure environment:
+-	[Azure Active Directory](https://azure.microsoft.com/services/active-directory/) is Microsoft's multi-tenant cloud-based directory and identity management service. All users for this solution are created in Azure Active Directory, including users accessing the SQL Database.
+-	Authentication to the application is performed using Azure Active Directory. For more information, see [Integrating applications with Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications). Additionally, the database column encryption uses Azure Active Directory to authenticate the application to Azure SQL Database. For more information, see how to [protect sensitive data in SQL Database](https://docs.microsoft.com/azure/sql-database/sql-database-always-encrypted-azure-key-vault).
+-	[Azure role-based access control](https://docs.microsoft.com/azure/active-directory/role-based-access-control-configure) enables administrators to define fine-grained access permissions to grant only the amount of access that users need to perform their jobs. Instead of giving every user unrestricted permissions for Azure resources, administrators can allow only certain actions for accessing cardholder data. Subscription access is limited to the subscription administrator.
+- [Azure Active Directory Privileged Identity Management](https://docs.microsoft.com/azure/active-directory/active-directory-privileged-identity-management-getting-started) enables customers to minimize the number of users who have access to certain information such as cardholder data.  Administrators can use Azure Active Directory Privileged Identity Management to discover, restrict, and monitor privileged identities and their access to resources. This functionality can also be used to enforce on-demand, just-in-time administrative access when needed.
+- [Azure Active Directory Identity Protection](https://docs.microsoft.com/azure/active-directory/active-directory-identityprotection) detects potential vulnerabilities affecting an organization’s identities, configures automated responses to detected suspicious actions related to an organization’s identities, and investigates suspicious incidents to take appropriate action to resolve them.
+>>>>>>> parent of d8cec71... removed 3.2 from name:DW/Azure Security and Compliance Blueprint - PCI DSS 3.2 Data Warehouse Overview.md
 
 ### Security
 **Secrets management**:
@@ -120,6 +179,7 @@ The solution uses [Azure Key Vault](https://azure.microsoft.com/services/key-vau
 - Key Vault access policies are defined with minimum required permissions to keys and secrets.
 - All keys and secrets in Key Vault have expiration dates.
 - All keys in Key Vault are protected by specialized hardware security modules (HSMs). The key type is an HSM Protected 2048-bit RSA Key.
+<<<<<<< HEAD:DW/Azure Security and Compliance Blueprint - PCI DSS 3.2 Data Warehouse Overview.md
 - All users and identities are granted minimum required permissions using RBAC.
 - Diagnostics logs for Key Vault are enabled with a retention period of at least 365 days.
 - Permitted cryptographic operations for keys are restricted to the ones required.
@@ -129,6 +189,17 @@ The solution uses [Azure Key Vault](https://azure.microsoft.com/services/key-vau
 **Malware protection**: [Microsoft Antimalware](https://docs.microsoft.com/azure/security/azure-security-antimalware) for VMs provides real-time protection capability that helps identify and remove viruses, spyware, and other malicious software, with configurable alerts when known malicious or unwanted software attempts to install or run on protected VMs.
 
 **Security alerts**: [Azure Security Center](https://docs.microsoft.com/en-us/azure/security-center/security-center-intro) enables customers to monitor traffic, collect logs, and analyze data sources for threats. Additionally, Azure Security Center accesses existing configuration of Azure services to provide configuration and service recommendations to help improve security posture and protect cardholder data. Azure Security Center includes a [threat intelligence report](https://docs.microsoft.com/en-us/azure/security-center/security-center-threat-report) for each detected threat to assist incident response teams investigate and remediate threats.
+=======
+- All users and identities are granted minimum required permissions using role-based access control.
+- Diagnostics logs for Key Vault are enabled with a retention period of at least 365 days.
+- Permitted cryptographic operations for keys are restricted to the ones required.
+
+**Patch management**: Windows VMs deployed as part of this reference architecture are configured by default to receive automatic updates from Windows Update Service. This solution also includes the Operations Management Suite [Azure Automation](https://docs.microsoft.com/azure/automation/automation-intro) service through which updated deployments can be created to patch VMs when needed.
+
+**Malware protection**: [Microsoft Antimalware](https://docs.microsoft.com/azure/security/azure-security-antimalware) for VMs provides real-time protection capability that helps identify and remove viruses, spyware, and other malicious software, with configurable alerts when known malicious or unwanted software attempts to install or run on protected VMs.
+
+**Security alerts**: [Azure Security Center](https://docs.microsoft.com/azure/security-center/security-center-intro) enables customers to monitor traffic, collect logs, and analyze data sources for threats. Additionally, Azure Security Center accesses existing configuration of Azure services to provide configuration and service recommendations to help improve security posture and protect cardholder data. Azure Security Center includes a [threat intelligence report](https://docs.microsoft.com/azure/security-center/security-center-threat-report) for each detected threat to assist incident response teams investigate and remediate threats.
+>>>>>>> parent of d8cec71... removed 3.2 from name:DW/Azure Security and Compliance Blueprint - PCI DSS 3.2 Data Warehouse Overview.md
 
 ### Business continuity
 **High availability**: Server workloads are grouped in an [Availability Set](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-manage-availability?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) to help ensure high availability of VMs in Azure. At least one VM is available during a planned or unplanned maintenance event, meeting the 99.95% Azure SLA.
@@ -136,12 +207,20 @@ The solution uses [Azure Key Vault](https://azure.microsoft.com/services/key-vau
 **Recovery Services Vault**: The [Recovery Services Vault](https://docs.microsoft.com/azure/backup/backup-azure-recovery-services-vault-overview) houses backup data and protects all configurations of Azure VMs in this architecture. With a Recovery Services Vault, customers can restore files and folders from an IaaS VM without restoring the entire VM, enabling faster restore times.
 
 ### Logging and auditing
+<<<<<<< HEAD:DW/Azure Security and Compliance Blueprint - PCI DSS 3.2 Data Warehouse Overview.md
 [Operations Management Suite (OMS)](https://docs.microsoft.com/en-us/azure/operations-management-suite/operations-management-suite-overview) provides extensive logging of system and user activity, as well as system health. The OMS [Log Analytics](https://azure.microsoft.com/services/log-analytics/) solution collects and analyzes data generated by resources in Azure and on-premises environments.
+=======
+[Operations Management Suite](https://docs.microsoft.com/azure/operations-management-suite/operations-management-suite-overview) provides extensive logging of system and user activity, as well as system health. The Operations Management Suite [Log Analytics](https://azure.microsoft.com/services/log-analytics/) solution collects and analyzes data generated by resources in Azure and on-premises environments.
+>>>>>>> parent of d8cec71... removed 3.2 from name:DW/Azure Security and Compliance Blueprint - PCI DSS 3.2 Data Warehouse Overview.md
 - **Activity logs**: [Activity logs](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs) provide insight into operations performed on resources in a subscription. Activity logs can help determine an operation's initiator, time of occurrence, and status.
 - **Diagnostic logs**: [Diagnostic logs](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs) include all logs emitted by every resource. These logs include Windows event system logs and Azure Blob storage, tables, and queue logs.
 - **Log archiving**: All diagnostic logs write to a centralized and encrypted Azure storage account for archival. The retention is user-configurable, up to 730 days, to meet organization-specific retention requirements. These logs connect to Azure Log Analytics for processing, storing, and dashboard reporting.
 
+<<<<<<< HEAD:DW/Azure Security and Compliance Blueprint - PCI DSS 3.2 Data Warehouse Overview.md
 Additionally, the following OMS solutions are included as a part of this architecture:
+=======
+Additionally, the following Operations Management Suite solutions are included as a part of this architecture:
+>>>>>>> parent of d8cec71... removed 3.2 from name:DW/Azure Security and Compliance Blueprint - PCI DSS 3.2 Data Warehouse Overview.md
 -	[AD Assessment](https://docs.microsoft.com/azure/log-analytics/log-analytics-ad-assessment): The Active Directory Health Check solution assesses the risk and health of server environments on a regular interval and provides a prioritized list of recommendations specific to the deployed server infrastructure.
 -	[Antimalware Assessment](https://docs.microsoft.com/azure/log-analytics/log-analytics-malware): The Antimalware solution reports on malware, threats, and protection status.
 -	[Azure Automation](https://docs.microsoft.com/azure/automation/automation-hybrid-runbook-worker): The Azure Automation solution stores, runs, and manages runbooks.
@@ -156,32 +235,57 @@ Additionally, the following OMS solutions are included as a part of this archite
 
 The data flow diagram for this reference architecture is available for [download](https://aka.ms/PCIDWTM) or can be found below. This model can help customers understand the points of potential risk in the system infrastructure when making modifications.
 
+<<<<<<< HEAD:DW/Azure Security and Compliance Blueprint - PCI DSS 3.2 Data Warehouse Overview.md
 ![threat model](Azure%20Security%20and%20Compliance%20Blueprint%20-%20PCI%20DSS%203.2%20Data%20Warehouse%20Threat%20Model.png)
 
 ## Compliance documentation
 The [Azure Security and Compliance Blueprint – PCI DSS 3.2 Customer Responsibility Matrix](https://aka.ms/PCICRM) lists responsibilities for all PCI DSS 3.2 requirements.
 
 The [Azure Security and Compliance Blueprint - PCI DSS 3.2 Data Warehouse Implementation Matrix](https://aka.ms/PCIDWCIM) provides information on which PCI DSS 3.2 requirements are addressed by the data warehouse architecture, including detailed descriptions of how the implementation meets the requirements of each covered control.
+=======
+![Threat Model](Azure%20Security%20and%20Compliance%20Blueprint%20-%20PCI%20DSS%203.2%20Data%20Warehouse%20Threat%20Model.png)
+
+## Compliance documentation
+The [Azure Security and Compliance Blueprint – PCI DSS Customer Responsibility Matrix](https://aka.ms/PCICRM) lists responsibilities for all PCI DSS 3.2 requirements.
+
+The [Azure Security and Compliance Blueprint - PCI DSS Data Warehouse Implementation Matrix](https://aka.ms/PCIDWCIM) provides information on which PCI DSS 3.2 requirements are addressed by the data warehouse architecture, including detailed descriptions of how the implementation meets the requirements of each covered control.
+>>>>>>> parent of d8cec71... removed 3.2 from name:DW/Azure Security and Compliance Blueprint - PCI DSS 3.2 Data Warehouse Overview.md
 
 ## Guidance and recommendations
 ### VPN and ExpressRoute
 A secure VPN tunnel or [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) needs to be configured to securely establish a connection to the resources deployed as a part of this data warehouse reference architecture. By appropriately setting up a VPN or ExpressRoute, customers can add a layer of protection for data in transit.
 
+<<<<<<< HEAD:DW/Azure Security and Compliance Blueprint - PCI DSS 3.2 Data Warehouse Overview.md
 By implementing a secure VPN tunnel with Azure, a virtual private connection between an on-premises network and an Azure Virtual Network can be created. This connection takes place over the Internet and allows customers to securely “tunnel” information inside an encrypted link between the customer's network and Azure. Site-to-Site VPN is a secure, mature technology that has been deployed by enterprises of all sizes for decades. The [IPsec tunnel mode](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc786385(v=ws.10)) is used in this option as an encryption mechanism.
 
 Because traffic within the VPN tunnel does traverse the Internet with a site-to-site VPN, Microsoft offers another, even more secure connection option. Azure ExpressRoute is a dedicated WAN link between Azure and an on-premises location or an Exchange hosting provider. As ExpressRoute connections do not go over the Internet, these connections offer more reliability, faster speeds, lower latencies, and higher security than typical connections over the Internet. Furthermore, because this is a direct connection of customer's telecommunication provider, the data does not travel over the Internet and therefore is not exposed to it.
 
 Best practices for implementing a secure hybrid network that extends an on-premises network to Azure are [available](https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/dmz/secure-vnet-hybrid).
+=======
+By implementing a secure VPN tunnel with Azure, a virtual private connection between an on-premises network and an Azure Virtual Network can be created. This connection takes place over the Internet and allows customers to securely “tunnel” information inside an encrypted link between the customer's network and Azure. Site-to-Site VPN is a secure, mature technology that has been deployed by enterprises of all sizes for decades. The [IPsec tunnel mode](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc786385(v=ws.10)) is used in this option as an encryption mechanism.
+
+Because traffic within the VPN tunnel does traverse the Internet with a site-to-site VPN, Microsoft offers another, even more secure connection option. Azure ExpressRoute is a dedicated WAN link between Azure and an on-premises location or an Exchange hosting provider. As ExpressRoute connections do not go over the Internet, these connections offer more reliability, faster speeds, lower latencies, and higher security than typical connections over the Internet. Furthermore, because this is a direct connection of customer's telecommunication provider, the data does not travel over the Internet and therefore is not exposed to it.
+
+Best practices for implementing a secure hybrid network that extends an on-premises network to Azure are [available](https://docs.microsoft.com/azure/architecture/reference-architectures/dmz/secure-vnet-hybrid).
+>>>>>>> parent of d8cec71... removed 3.2 from name:DW/Azure Security and Compliance Blueprint - PCI DSS 3.2 Data Warehouse Overview.md
 
 ### Extract-Transform-Load (ETL) process
 [PolyBase](https://docs.microsoft.com/sql/relational-databases/polybase/polybase-guide) can load data into Azure SQL Data Warehouse without the need for a separate ETL or import tool. PolyBase allows access to data through T-SQL queries. Microsoft's business intelligence and analysis stack, as well as third-party tools compatible with SQL Server, can be used with PolyBase.
 
 ### Azure Active Directory setup
+<<<<<<< HEAD:DW/Azure Security and Compliance Blueprint - PCI DSS 3.2 Data Warehouse Overview.md
 [Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-whatis) is essential to managing the deployment and provisioning access to personnel interacting with the environment. An existing Windows Server Active Directory can be integrated with AAD in [four clicks](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-get-started-express). Customers can also tie the deployed Active Directory infrastructure (domain controllers) to an existing AAD by making the deployed Active Directory infrastructure a subdomain of an AAD forest.
 
 ### Optional services
 Azure offers a variety of services to assist with the storage and staging of formatted and unformatted data. The following services can be added to this reference architecture depending on customer requirements:
 -	[Azure Data Factory](https://docs.microsoft.com/azure/data-factory/introduction) is a managed cloud service that is built for complex hybrid extract-transform-load (ETL), extract-load-transform (ELT), and data integration projects. Azure Data Factory has capabilities to help trace and locate cardholder data, including visualization and monitoring tools to identify when data arrived and where it came from. Using Azure Data Factory, customers can create and schedule data-driven workflows called pipelines that ingest data from disparate data stores. These pipelines allow customers to ingest data from both internal and external sources. Customers can then process and transform the data for output into data stores such as Azure SQL Data Warehouse.
+=======
+[Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-whatis) is essential to managing the deployment and provisioning access to personnel interacting with the environment. An existing Windows Server Active Directory can be integrated with Azure Active Directory in [four clicks](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-get-started-express). Customers can also tie the deployed Active Directory infrastructure (domain controllers) to an existing Azure Active Directory by making the deployed Active Directory infrastructure a subdomain of an Azure Active Directory forest.
+
+### Optional services
+Azure offers a variety of services to assist with the storage and staging of formatted and unformatted data. The following services can be added to this reference architecture depending on customer requirements:
+-	[Azure Data Factory](https://docs.microsoft.com/azure/data-factory/introduction) is a managed cloud service that is built for complex hybrid extract-transform-load (ETL), and data integration projects. Azure Data Factory has capabilities to help trace and locate cardholder data, including visualization and monitoring tools to identify when data arrived and where it came from. Using Azure Data Factory, customers can create and schedule data-driven workflows called pipelines that ingest data from disparate data stores. These pipelines allow customers to ingest data from both internal and external sources. Customers can then process and transform the data for output into data stores such as Azure SQL Data Warehouse.
+>>>>>>> parent of d8cec71... removed 3.2 from name:DW/Azure Security and Compliance Blueprint - PCI DSS 3.2 Data Warehouse Overview.md
 - Customers can stage unstructured data in [Azure Data Lake Store](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-overview), which enables the capture of data of any size, type, and ingestion speed in a single place for operational and exploratory analytics.  Azure Data Lake has capabilities that enable the extraction and conversion of data. Azure Data Lake Store is compatible with most open source components in the Hadoop ecosystem and integrates nicely with other Azure services such as Azure SQL Data Warehouse.
 
 ## Disclaimer
