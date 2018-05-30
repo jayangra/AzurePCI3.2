@@ -21,9 +21,9 @@ This solution uses the following Azure services. Details of the deployment archi
 - App Service Environment v2
 - Application Gateway
   - (1) Web Application Firewall
-    - Firewall Mode: Prevention
-    - Rule Set: OWASP 3.0
-    - Listener Port: 443
+    - Firewall mode: prevention
+    - Rule set: OWASP 3.0
+    - Listener port: 443
 - Application Insights
 - Azure Active Directory
 - Azure Automation
