@@ -10,7 +10,7 @@ Achieving PCI DSS-compliance requires that an accredited Qualified Security Asse
 
 ## Architecture diagram and components
 
-[Here](compliance-documentation)
+[Here](#compliance-documentation)
 
 This solution provides a reference architecture for a PaaS web application with an Azure SQL Database backend. The web application is hosted in an isolated Azure App Service Environment, which is a private, dedicated environment in an Azure datacenter. The environment load balances traffic for the web application across VMs managed by Azure. This architecture also includes network security groups, an Application Gateway, Azure DNS, and Load Balancer. Furthermore, Application Insights provides real time application performance management and analytics through Operations Management Suite. **Azure recommends configuring a VPN or ExpressRoute connection for management and data import into the reference architecture subnet.**
 
